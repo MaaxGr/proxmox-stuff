@@ -27,6 +27,7 @@ HEALTHCHECKS=0
 # Set to the URL of your healthchecks.io check
 HEALTHCHECKS_URL=https://hc-ping.com/your_uuid_here
 
+
 ###########################
 
 # Set terminal to "dumb" if not set (cron compatibility)
@@ -83,7 +84,6 @@ _filename_final="$_tdir/pve_"$_HOSTNAME"_"$_now".tar.gz"
 function description {
 # Check to see if we are in an interactive terminal, if not, skip the description
     if [[ -t 0 && -t 1 ]]; then
-        clear
         files_to_be_saved="/etc/*, /var/lib/pve-cluster/*, /root/*, /var/spool/cron/*, /usr/share/kvm/*.vbios"
         if [ "$BACKUP_OPT_FOLDER" = true ]; then files_to_be_saved="${files_to_be_saved}, /opt/*"; fi
         cat <<EOF
@@ -108,10 +108,7 @@ function description {
         https://github.com/DerDanilo/proxmox-stuff
         -----------------------------------------------------------------
 
-        Hit return to proceed or CTRL-C to abort.
 EOF
-        read dummy
-        clear
     fi
 }
 
