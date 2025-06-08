@@ -1,0 +1,14 @@
+[Unit]
+Description=Flask Backup Server
+After=network.target
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/srv/proxmox-backup-webserver
+ExecStart=/srv/proxmox-backup-webserver/venv/bin/python webserver.py
+Restart=on-failure
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
