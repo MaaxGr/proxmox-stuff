@@ -164,13 +164,6 @@ function compressandarchive {
     cp $_filename_final $_bdir/
 }
 
-function stopservices {
-    # stop host services
-    for i in pve-cluster pvedaemon vz qemu-server; do systemctl stop $i ; done
-    # give them a moment to finish
-    sleep 10s
-}
-
 function startservices {
     # restart services
     for i in qemu-server vz pvedaemon pve-cluster; do systemctl start $i ; done
@@ -188,9 +181,6 @@ fi
 description
 are-we-root-abort-if-not
 check-num-backups
-
-# We don't need to stop services, but you can do that if you wish
-#stopservices
 
 copyfilesystem
 
