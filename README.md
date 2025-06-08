@@ -1,6 +1,7 @@
 # Proxmox stuff
 
-This is a collection of stuff that I wrote for Proxmox. Its possble to use the [Ansible roles](#ansible) I wrote or to use the [bash scripts](#bash-scripts) for the backup & restore tasks.
+This is a fork of https://github.com/DerDanilo/proxmox-stuff with some small changes.
+This is a collection of stuff written for Proxmox by the original author. It's possible to use the [Ansible roles](#ansible) they wrote or to use the [bash scripts](#bash-scripts) for backup and restore tasks.
 
 ---
 
